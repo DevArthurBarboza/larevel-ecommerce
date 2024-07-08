@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+' skinparam packageStyle rect
+actor lojista
+rectangle painelAdmin{
+    lojista --> (gerenciar produto)
+    (gerenciar estoque) .> (gerenciar produto) : extends
+    lojista --> (gerenciar categoria)
+    lojista --> (gerenciar oferta)
+    lojista --> (visualizar relatório)
+    lojista --> (gerenciar método de pagamento)
+    lojista --> (gerenciar método de entrega)
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+' skinparam packageStyle rect
+actor cliente
+
+rectangle fecharPedido {
+  (finalizar compra) .> (selecionar entrega) : include
+  (finalizar compra) .> (selecionar pagamento) : include
+  cliente --> (finalizar compra)
+}
+
+rectangle catálogo {
+    cliente --> (visualizar produto)
+    (adicionar produto no carrinho) .> (visualizar produto) : extends
+    (adicionar produto na lista de desejos) .> (visualizar produto) : extends
+}
+@enduml
